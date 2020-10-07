@@ -55,4 +55,19 @@ class RestaurantTest < Minitest::Test
     assert_equal false, restaurant2.open_for_lunch?
   end
 
+  def test_it_can_return_menu_dish_names
+    restaurant1 = Restaurant.new('10:00', 'Fuel Cafe')
+    restaurant2 = Restaurant.new('16:00', 'Il Poggio')
+
+    restaurant1.add_dish('Burrata')
+    restaurant1.add_dish('Pizzetta')
+    restaurant1.add_dish('Ravioli')
+
+    restaurant2.add_dish('Burrata')
+    restaurant2.add_dish('Pizzetta')
+    restaurant2.add_dish('Ravioli')
+
+    assert_equal ['BURRATA', 'PIZZETTA', 'RAVIOLI'], restaurant1.menu_dish_names
+    assert_equal ['BURRATA', 'PIZZETTA', 'RAVIOLI'], restaurant2.menu_dish_names
+  end
 end
