@@ -14,5 +14,9 @@ class Restaurant
 
   def add_dish(dish)
     @dishes << dish
-  end  
+  end
+
+  def open_for_lunch?
+    @opening_time 
+  end
 end
