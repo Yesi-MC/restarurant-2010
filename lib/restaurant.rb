@@ -17,6 +17,6 @@ class Restaurant
   end
 
   def open_for_lunch?
-    @opening_time 
+    @opening_time < "12:00"
   end
 end
